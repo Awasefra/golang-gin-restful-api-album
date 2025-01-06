@@ -29,3 +29,10 @@ func GetAlbumByID(id string) *Album {
 func SaveAlbum(album Album) {
 	albums = append(albums, album)
 }
+
+func GetLastAlbumID() string {
+	if len(albums) == 0 {
+		return "" // Jika album kosong, kembalikan string kosong
+	}
+	return albums[len(albums)-1].ID
+}
